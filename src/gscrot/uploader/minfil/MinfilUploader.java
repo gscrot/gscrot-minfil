@@ -2,9 +2,9 @@ package gscrot.uploader.minfil;
 
 import iconlib.IconUtils;
 
-import java.awt.image.BufferedImage;
-
+import com.redpois0n.gscrot.Capture;
 import com.redpois0n.gscrot.CaptureUploader;
+import com.redpois0n.gscrot.UploadResponse;
 
 public class MinfilUploader extends CaptureUploader {
 	
@@ -13,12 +13,10 @@ public class MinfilUploader extends CaptureUploader {
 	}
 
 	@Override
-	public void process(BufferedImage image) {
-		try {
-			System.out.println(Minfil.upload(image));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public UploadResponse process(Capture capture) throws Exception {
+		String response = Minfil.upload(capture.getBinary(), capture.getFormat().toString());
+		
+		return null;
 	}
 
 }

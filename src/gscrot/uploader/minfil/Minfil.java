@@ -15,17 +15,21 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 public class Minfil {
-
+	
 	public static String upload(BufferedImage image) throws Exception {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		ImageIO.write(image, "png", baos);
 		byte[] bImage = baos.toByteArray();
 		
+		return upload(bImage, "png");
+	}
+
+	public static String upload(byte[] b, String extension) throws Exception {
 		HttpClient httpclient = HttpClientBuilder.create().build();
 		HttpPost httppost = new HttpPost("https://minfil.org/api/upload");
 		
 		MultipartEntityBuilder reqEntity = MultipartEntityBuilder.create();
-		reqEntity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE).addBinaryBody("minfil", bImage, ContentType.DEFAULT_BINARY, "image.png");
+		reqEntity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE).addBinaryBody("minfil", b, ContentType.DEFAULT_BINARY, "image." + extension);
 		httppost.setEntity(reqEntity.build());
 
 		HttpResponse response = httpclient.execute(httppost);
