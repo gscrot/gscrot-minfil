@@ -17,7 +17,7 @@ public class MinfilUploader extends CaptureUploader {
 
 	@Override
 	public UploadResponse process(Capture capture) throws Exception {
-		String response = Minfil.upload(capture.getBinary(), capture.getFormat().toString());
+		String response = Minfil.upload(capture.getBinary(), capture.getFormat());
 		
 		JSONObject jo = (JSONObject) JSONValue.parse(response);
 		
