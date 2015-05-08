@@ -6,10 +6,10 @@ import java.awt.image.BufferedImage;
 
 import com.redpois0n.gscrot.CaptureUploader;
 
-public class Uploader extends CaptureUploader {
+public class MinfilUploader extends CaptureUploader {
 	
-	public Uploader() {
-		super("Minfil", IconUtils.getIcon("minfil", Uploader.class));
+	public MinfilUploader() {
+		super("Minfil", IconUtils.getIcon("minfil", MinfilUploader.class));
 	}
 
 	@Override

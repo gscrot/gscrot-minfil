@@ -8,7 +8,7 @@ public class MinfilPlugin extends Plugin {
 
 	public MinfilPlugin() {
 		super("Minfil");
-		CaptureUploader.addUploader(new Uploader());
+		CaptureUploader.addUploader(new MinfilUploader());
 	}
 
 }
