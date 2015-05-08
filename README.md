@@ -6,9 +6,8 @@ API documentation [here](https://minfil.org/api)
 
 ## Dependencies
 
-__[Apache HttpComponents](https://hc.apache.org/)__
-
-- commons-logging
-- httpclient
-- httpcore
-- httpmime
+- [Apache HttpComponents](https://hc.apache.org/)
+	- commons-logging
+	- httpclient
+	- httpcore
+	- httpmime
