@@ -11,3 +11,5 @@ API documentation [here](https://minfil.org/api)
 	- httpclient
 	- httpcore
 	- httpmime
+	
+- [json-simple](https://code.google.com/p/json-simple/)
